@@ -12,6 +12,7 @@ import sample.model.Device;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 public class Controller {
@@ -62,7 +63,7 @@ public class Controller {
 
         DeviceList deviceList = null;
 
-        File file = new File(getClass().getResource("/devices.json").getFile());
+        InputStream file = getClass().getResourceAsStream("/devices.json");
 
         ObjectMapper objectMapper = new ObjectMapper();
 
