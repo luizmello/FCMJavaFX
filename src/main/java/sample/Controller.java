@@ -18,7 +18,7 @@ public class Controller {
 
     private FirebaseConfig firebaseConfig = new FirebaseConfig(
             "https://fcm.googleapis.com/fcm/send",
-            "your server key");
+            "AAAA7vlW1NA:APA91bHNbuqte4Nk_XYhWnSC_Oe5FzE904bovYGPZn3AlGMie3yC2DNjDgsAfirBxEYixiZ3-H141TjTkOIXW-aiAenJZ67nky74nuCJt8x-QQoe9YGKo4Kst2gUWuoq_Q_-JGqszsm6");
 
 
     @FXML

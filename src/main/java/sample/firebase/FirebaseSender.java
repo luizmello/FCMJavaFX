@@ -40,19 +40,10 @@ public class FirebaseSender extends FirebaseClient {
 
     @SuppressWarnings("unchecked")
     private boolean isValid(Response response) throws IOException {
-        if (response.code() != 401) {
-            String resp = response.body().string();
-            List<LinkedHashMap<?, ?>> lista = (List<LinkedHashMap<?, ?>>) mapper.readValue(resp, Map.class)
-                    .get("results");
-            Map<?, ?> results = lista.get(0);
-            if (results.containsKey(ERROR)) {
-                String erro = (String) results.get(ERROR);
-                if (erro.equals(NOT_REGISTERED) || erro.equals(INVALID_REGISTRATION)) {
-                    return true;
-                }
-            }
+        if (response.code() != 200) {
+            return false;
         }
-        return false;
+        return true;
     }
 
 }
