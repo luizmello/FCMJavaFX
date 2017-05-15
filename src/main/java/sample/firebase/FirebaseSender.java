@@ -26,7 +26,7 @@ public class FirebaseSender extends FirebaseClient {
         String json = mapper.writeValueAsString(mensagem);
         Request request = criaRequisicaoParaPost(json);
         Response response = client.newCall(request).execute();
-        if (isValid(response)) {
+        if (!isValid(response)) {
             System.out.println("fail firebase " + response.body().string());
             response.close();
             return false;
